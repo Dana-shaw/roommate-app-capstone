@@ -5,8 +5,8 @@ const { Model, Validator } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
-      User.hasMany(models.Chore, {foreignKey: 'ownerId'})
-      User.belongsTo(models.Chore, {foreignKey: 'assignedTo'})
+      // User.hasMany(models.Chore, {foreignKey: 'ownerId'})
+      User.hasMany(models.Chore, {foreignKey: 'assignedTo'})
       User.hasMany(models.Expense, {foreignKey: 'ownerId'})
     }
   }
