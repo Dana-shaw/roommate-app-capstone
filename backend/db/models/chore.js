@@ -10,15 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // Chore.belongsTo(models.User, {foreignKey: 'ownerId'})
+      Chore.belongsTo(models.User, {foreignKey: 'ownerId'})
       Chore.belongsTo(models.User, {foreignKey: 'assignedTo'})
     }
   }
   Chore.init({
-    // ownerId: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    // },
+    ownerId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
