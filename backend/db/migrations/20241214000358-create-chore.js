@@ -18,8 +18,9 @@ module.exports = {
       ownerId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        unique: true,
         references: {
-          model: 'User',
+          model: 'Users',
           key: 'id'
         }
       },
@@ -30,8 +31,9 @@ module.exports = {
       assignedTo: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        unique: true,
         references: {
-          model: 'User',
+          model: 'Users',
           key: 'id'
         }
       },
