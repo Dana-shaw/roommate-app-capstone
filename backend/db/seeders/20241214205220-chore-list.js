@@ -14,39 +14,39 @@ module.exports = {
       {
         ownerId: 1,
         name: 'Vacuum',
-        // assignedTo: 1,
+        assignedTo: 1,
         isCompleted: true
       },
       {
         ownerId: 2,
         name: 'Mop',
-        // assignedTo: 2,
+        assignedTo: 2,
         isCompleted: true
       },
       {
         ownerId: 3,
         name: 'Dust and wipe furniture',
-        // assignedTo: 3,
+        assignedTo: 3,
         isCompleted: true
       },
       {
         ownerId: 1,
         name: 'Clean oven and microwave',
-        // assignedTo: 2,
+        assignedTo: 2,
         dueDate: '2025-01-15',
         isCompleted: false
       },
       {
         ownerId: 2,
         name: 'Clean fridge',
-        // assignedTo: 3,
+        assignedTo: 3,
         dueDate: '2025-01-15',
         isCompleted: false
       },
       {
         ownerId: 3,
         name: 'Clean guest bathroom',
-        // assignedTo: 1,
+        assignedTo: 1,
         dueDate: '2025-01-15',
         isCompleted: false
       }
