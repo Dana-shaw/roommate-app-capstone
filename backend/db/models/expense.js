@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Expense.belongsTo(models.User, {foreignKey: 'ownerId'})
-      Expense.hasMany(models.User, {foreignKey: 'assignedTo'})
+      // Expense.hasMany(models.User, {foreignKey: 'assignedTo'})
       Expense.belongsTo(models.ExpenseCategory, {foreignKey: 'category'})
     }
   }
