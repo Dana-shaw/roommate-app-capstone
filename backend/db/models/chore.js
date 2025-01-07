@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Chore.belongsTo(models.User, {foreignKey: 'ownerId'})
-      Chore.hasOne(models.User, {foreignKey: 'assignedTo'})
+      // Chore.hasOne(models.User, {foreignKey: 'assignedTo'})
     }
   }
   Chore.init({
