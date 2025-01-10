@@ -1,7 +1,7 @@
 import { useNavigate, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
-import { HiHomeModern } from "react-icons/hi2";
+import { GiKangaroo } from "react-icons/gi";
 // import OpenModalButton from "../OpenModalButton";
 // import LoginFormModal from "../LoginFormModal";
 // import SignupFormModal from '../SignupFormModal';
@@ -17,32 +17,21 @@ function Navigation({ isLoaded }) {
   };
 
   return (
-    <nav className="nav-container">
+    <nav className={!sessionUser ? "hidden" : "nav-container"}>
       <ul className="navigation">
         <li>
           <div className="logo-container" onClick={home}>
-            <HiHomeModern className="logo" />
-            <h1 className="home">Getaway</h1>
+            <GiKangaroo />
+            <h1>Roomease</h1>
           </div>
         </li>
-        
+
         {isLoaded && (
-          sessionUser ? (
-            <div className="action-container">
-              <li>
-                <NavLink to="/spots/new">Create a New Spot</NavLink>
-              </li>
-              <li>
-                <ProfileButton user={sessionUser} />
-              </li>
-            </div>
-          ) : (
-            <div className="action-container">
-              <li>
-                <ProfileButton user={sessionUser} />
-              </li>
-            </div>
-          )
+          <div className="action-container">
+            <li>
+              <ProfileButton user={sessionUser} />
+            </li>
+          </div>
         )}
       </ul>
     </nav>

@@ -1,0 +1,28 @@
+.layout {
+    color: rgb(170, 170, 170);
+    display: grid;
+    grid-template-columns: 30% 70%;
+    max-height: 96%;
+    position: fixed;
+    top: 65px;
+    bottom: 81px;
+    left: 0;
+    right: 0;
+}
+
+.sidebar-create-album {
+    background-color: gray;
+    height: 30px;
+    color: white;
+    display: flex;
+    width: 120px;
+    align-items: center;
+    margin-left: 260px;
+    justify-content: center;
+}
+
+.auth-forms{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

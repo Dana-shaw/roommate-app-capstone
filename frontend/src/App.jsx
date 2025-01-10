@@ -3,11 +3,9 @@ import { useDispatch } from "react-redux";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import * as sessionActions from "./store/session";
-import LandingPage from "./pages/LandingPage";
-import SpotDetailPage from "./pages/SpotDetailPage/SpotDetailPage";
-import CreateSpotForm from "./components/CreateSpotForm/CreateSpotForm";
-import ManageSpotsPage from "./pages/ManageSpotsPage";
-import EditSpotForm from "./components/EditSpotForm/EditSpotForm";
+import LandingPage from "./pages/Home";
+import Sidebar from "./pages/Home/Sidebar";
+
 
 function Layout() {
   const dispatch = useDispatch();
@@ -22,7 +20,13 @@ function Layout() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      {isLoaded && <Outlet />}
+      <div className="layout">
+          <div className="sidebar">
+            <Sidebar />
+          </div>
+
+          {isLoaded && <Outlet />}
+        </div>
     </>
   );
 }
@@ -35,26 +39,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <LandingPage />,
       },
-      {
-        path: "/spots/:spotId",
-        element: <SpotDetailPage />
-        
-      },
-      {
-        path: "/spots/:spotId/edit",
-        element: <EditSpotForm />
-        
-      },
-      {
-        path: "/spots/new",
-        element: <CreateSpotForm />
-        
-      },
-      {
-        path: "/spots/current",
-        element: <ManageSpotsPage />
-        
-      },
+     
     ],
   },
 ]);

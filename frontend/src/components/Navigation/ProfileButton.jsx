@@ -5,7 +5,7 @@ import { HiUserCircle } from "react-icons/hi2";
 import { HiOutlineMenu } from "react-icons/hi";
 import * as sessionActions from "../../store/session";
 import OpenModalButton from "../OpenModalButton";
-import LoginFormModal from "../LoginFormModal";
+import LoginForm from "../LoginForm";
 import SignupFormModal from "../SignupFormModal";
 import "./ProfileButton.css";
 
@@ -58,11 +58,6 @@ const ProfileButton = ({ user }) => {
               <li>Hello, {user.firstName}</li>
               <li>{user.email}</li>
             </div>
-            <div className="manage-spots">
-              <Link to={"/spots/current"} className="manage-link" color="black">
-                Manage Spots
-              </Link>
-            </div>
             <div className="logout-button-container">
               <li>
                 <button onClick={logout} className="logout-button">
@@ -78,12 +73,6 @@ const ProfileButton = ({ user }) => {
               onButtonClick={closeMenu}
               modalComponent={<SignupFormModal />}
               className="signup-button"
-            />
-            <OpenModalButton
-              itemText="Log In"
-              onButtonClick={closeMenu}
-              modalComponent={<LoginFormModal />}
-              className="login-button"
             />
           </div>
         )}

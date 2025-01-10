@@ -1,4 +1,22 @@
-/* TODO: Add sitewide styles */
-html * {
-    font-family: "Nunito Sans";
+body, #root {
+    font-family: "Roboto";
+    margin: unset;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+    width: 100%;
+}
+
+h1 {
+    color: white;
+    font-size: 70px;
+    margin: 20px;
 }
