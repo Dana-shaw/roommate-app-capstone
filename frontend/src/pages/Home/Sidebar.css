@@ -1,0 +1,27 @@
+.sidebar {
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-icon {
+    font-size: 30px;
+    color: white
+}
+
+.new-button {
+    border: none;
+    background: none;
+    color: white;
+}
+
+.add-new-dropdown {
+    background-color: #343434;
+}

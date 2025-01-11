@@ -52,4 +52,21 @@ router.post("/", validateSignup, async (req, res) => {
   });
 });
 
+router.get("/", async (req, res) => {
+  const Users = []
+  let users = await User.findAll()
+
+  for (let i = 0; i < users.length; i++) {
+    let user = users[i];
+    let usersRes = {
+      id: user.id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+    };
+
+    Users.push(usersRes);
+  }
+  return res.status(200).json({ Users });
+})
+
 module.exports = router;

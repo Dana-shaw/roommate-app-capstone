@@ -2,55 +2,38 @@ import { FiPlus } from "react-icons/fi";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
+import "./Sidebar.css";
+import CreateNewButton from "./CreateNewButton";
+import { RxDashboard } from "react-icons/rx";
+import { GiWashingMachine } from "react-icons/gi";
+import { GiPiggyBank } from "react-icons/gi";
 
 function Sidebar() {
-    const [helpWithRefresh, setHelpWithRefresh] = useState(0)
-    const [isLoaded, setIsLoaded] = useState(false)
+  const [helpWithRefresh, setHelpWithRefresh] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-    const ulRef = useRef()
-    let navigate = useNavigate()
-    // const recentAlbumRef = useRef(null);
-    let dispatch = useDispatch()
+  const handleSidebarOpen = () => {
+    setSidebarOpen(true);
+  };
 
+  const handleSidebarClose = () => {
+    setSidebarOpen(false);
+  };
 
-    useEffect(() => {
+  return (
+      <div className="sidebar-container">
 
-    }, [dispatch]);
+          <CreateNewButton className="sidebar-icon"/>
 
+          <RxDashboard className="sidebar-icon"/>
 
+          <GiWashingMachine className="sidebar-icon"/>
 
-    let refresh = () => {
-        setHelpWithRefresh(prev => prev + 1)
-    }
+        <GiPiggyBank className="sidebar-icon"/>
 
-
-    const toggleMenu = (e) => {
-        e.stopPropagation();
-    };
-
-
-    useEffect(() => {
-
-    }, [])
-
-
-    let handleClick = (id) => {
-
-
-    };
-
-
-    return (
-        <>
-            <div className="head-container">
-                <div className="side-head">
-                    <h3>Sidebar</h3>
-
-                </div>
-            </div>
-        </>
-    )
+      </div>
+  );
 }
 
 export default Sidebar;

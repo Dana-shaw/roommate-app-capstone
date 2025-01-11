@@ -21,8 +21,8 @@ function Navigation({ isLoaded }) {
       <ul className="navigation">
         <li>
           <div className="logo-container" onClick={home}>
-            <GiKangaroo />
-            <h1>Roomease</h1>
+            <GiKangaroo className="logo"/>
+            <p className="home">Roomease</p>
           </div>
         </li>
 

@@ -20,13 +20,7 @@ function Layout() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      <div className="layout">
-          <div className="sidebar">
-            <Sidebar />
-          </div>
-
           {isLoaded && <Outlet />}
-        </div>
     </>
   );
 }

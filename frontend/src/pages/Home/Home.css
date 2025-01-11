@@ -1,24 +1,15 @@
-.layout {
-    color: rgb(170, 170, 170);
-    display: grid;
-    grid-template-columns: 30% 70%;
-    max-height: 96%;
-    position: fixed;
-    top: 65px;
-    bottom: 81px;
-    left: 0;
-    right: 0;
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 200px;
+    background-color: blueviolet;
 }
 
-.sidebar-create-album {
-    background-color: gray;
-    height: 30px;
-    color: white;
-    display: flex;
-    width: 120px;
-    align-items: center;
-    margin-left: 260px;
-    justify-content: center;
+.content-list {
+    background-color: brown;
 }
 
 .auth-forms{

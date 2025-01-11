@@ -1,4 +1,5 @@
 body, #root {
+    background-color: #343434;
     font-family: "Roboto";
     margin: unset;
     position: fixed;
@@ -10,13 +11,30 @@ body, #root {
 
 nav {
     display: flex;
-    justify-content: space-between;
-    height: 65px;
+    margin-top: 20px;
+    height: 50px;
     width: 100%;
 }
 
 h1 {
-    color: white;
+    color: #ffffff;
     font-size: 70px;
     margin: 20px;
+}
+
+p {
+    color: white;
+}
+
+.layout {
+    display: flex;
+    flex-direction: row;
+}
+
+.content {
+    border-radius: 10px;
+    box-sizing: border-box;
+    max-height: 99%;
+    width: 99%;
+    margin: 0 5px;
 }

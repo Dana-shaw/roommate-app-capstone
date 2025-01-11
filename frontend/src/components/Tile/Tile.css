@@ -1,0 +1,30 @@
+.container-song-tile {
+    padding: 0 15px;
+}
+
+.tile {
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 7px;
+    display: grid;
+    grid-template-columns: 50px 31% 31% 16% 15%;
+    grid-template-rows: 100%;
+    height: 60px;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.tile:hover {
+    background-color: #2e2d2d;
+}
+
+
+.actions {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.hidden {
+    display: none;
+}
