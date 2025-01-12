@@ -9,16 +9,23 @@ import { GoCheckCircle } from "react-icons/go";
 import "./tile.css";
 import OpenModalButton from "../OpenModalButton";
 import EditChoreModal from "../EditChoreModal/EditChoreModal";
-import { deleteChore } from "../../store/chores";
+import { deleteChore, editChore } from "../../store/chores";
 
 function Tile({ chore }) {
   const dispatch = useDispatch();
   const [hovered, setHovered] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(chore.isCompleted)
 
   const handleDelete = async (e) => {
     e.preventDefault();
 
     await dispatch(deleteChore(chore.id));
+  };
+
+  const handleCheck = async (e) => {
+    e.preventDefault();
+    const payload = {isCompleted: !chore.isCompleted}
+    await dispatch(editChore(chore.id, payload));
   };
 
   return (
@@ -30,7 +37,7 @@ function Tile({ chore }) {
       onMouseLeave={() => setHovered(false)}
     >
       <div>
-        <GoCircle />
+        {isCompleted ? <GoCheckCircle onClick={handleCheck}/> : <GoCircle onClick={handleCheck}/>}
       </div>
       <p>{chore.name}</p>
 
