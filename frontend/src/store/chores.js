@@ -1,3 +1,5 @@
+import { csrfFetch } from "./csrf";
+
 const SET_CHORES = "chores/setChores";
 const ADD_CHORE = "chores/addChore";
 
@@ -12,7 +14,7 @@ const newChore = (payload) => ({
 });
 
 export const getAllChores = () => async (dispatch) => {
-  const response = await fetch("/api/chores");
+  const response = await csrfFetch("/api/chores");
   if (response.ok) {
     const data = await response.json();
     console.log(data);
@@ -24,12 +26,13 @@ export const getAllChores = () => async (dispatch) => {
   }
 };
 
-export const addChore = (id) => async (dispatch) => {
-  const res = await fetch(`/api/chores`, {
+export const addChore = (payload) => async (dispatch) => {
+  const res = await csrfFetch(`/api/chores`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify(payload)
   });
 
   if (res.ok) {

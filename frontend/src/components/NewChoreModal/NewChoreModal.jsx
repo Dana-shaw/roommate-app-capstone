@@ -22,7 +22,10 @@ function NewChoreModal({}) {
       name,
       assignedTo,
       dueDate,
+      isCompleted: false
     };
+
+    console.log(payload)
 
     dispatch(addChore(payload))
     closeModal()
@@ -36,7 +39,7 @@ function NewChoreModal({}) {
         <input type="text" placeholder="What's needs to be done?" onChange={(e) => setName(e.target.value)}></input>
         </div>
         <div>
-        <select onChange={(e) => setAssignedTo(e.target.value)} placeholder="">
+        <select onChange={(e) => setAssignedTo(parseInt(e.target.value))} placeholder="">
         <option value="" key="">--Select who to assign to--</option>
           {Object.values(users).map((user) => (
           <option value={user.id} key={user.id}>{user.firstName} {user.lastName}</option>
