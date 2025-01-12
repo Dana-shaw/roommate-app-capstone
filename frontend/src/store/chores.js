@@ -42,6 +42,34 @@ export const addChore = (payload) => async (dispatch) => {
   }
 };
 
+export const editChore = (id, payload) => async (dispatch) => {
+  const res = await csrfFetch(`/api/chores/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  
+  if (res.ok) {
+    const data = await res.json();
+    dispatch(addChore(data));
+    return data
+  }
+};
+
+export const deleteChore = (id) => async dispatch => {
+  const response = await csrfFetch(`/api/chores/${id}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+  });
+
+  if (response.ok) {
+      const data = response.json()
+      dispatch(getAllChores());
+      return data
+}
+  return response;
+}
+
 const initialState = {};
 
 function choresReducer(state = initialState, action) {

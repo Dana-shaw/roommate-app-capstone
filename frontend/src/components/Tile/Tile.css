@@ -2,7 +2,7 @@
     padding: 0 15px;
 }
 
-.tile {
+.tile-container {
     align-items: center;
     box-sizing: border-box;
     border-radius: 7px;
@@ -14,7 +14,7 @@
     padding-left: 10px;
 }
 
-.tile:hover {
+.tile-container:hover {
     background-color: #2e2d2d;
 }
 

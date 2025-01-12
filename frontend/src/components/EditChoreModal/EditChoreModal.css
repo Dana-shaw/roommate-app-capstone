@@ -1,0 +1,4 @@
+#new-chore-modal {
+    display: flex;
+    flex-direction: column;
+}
